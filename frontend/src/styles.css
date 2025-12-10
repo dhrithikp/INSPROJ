@@ -1,0 +1,15 @@
+/* Core styles used by the TSX app; the index.html provides the overall UI shell */
+:root{ --card-text: #061024 }
+/* IO grid: two equal panels side-by-side */
+.io-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:24px; align-items:stretch }
+.io-panel{ display:flex; flex-direction:column; height:100% }
+.io-text{ display:block; width:100%; flex:1 1 auto; min-height:360px; padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background: transparent; color: #ffffff; font-family: ui-monospace, 'Roboto Mono', monospace; font-size:14px; line-height:1.6; resize:none }
+
+/* fallback for smaller screens */
+@media (max-width: 960px){ .io-grid{ grid-template-columns: 1fr; } .io-text{ min-height:260px }}
+
+textarea{ background:transparent; color:inherit; font-family:inherit }
+input, select, button{ padding:10px 12px; border-radius:8px; }
+button{ cursor:pointer }
+button.secondary{ background:transparent; border:1px solid rgba(14,165,233,0.18); color:var(--card-text); }
+button:disabled{ opacity:0.6; cursor:not-allowed }
